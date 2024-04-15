@@ -1,0 +1,29 @@
+{
+    "Posts": [
+        {
+            "title": "Bee Farming",
+            "content": "With ksh. 6500 you are good to go! You will have one hive and from there you will do splitting",
+            "user_id": 1
+        },
+        {
+            "title": "Organic Farming",
+            "content": "organic farming involves utilizing natural compost and manure for farming purposes. No use of chemicals.",
+            "user_id": 2
+        },
+        {
+            "title": "Pig Farming",
+            "content": "Pig farming  is one of the easiest ventures one can opt to do. They need less feeding, give them iron vaccine and you are good to go",
+            "user_id": 2
+        },
+        {
+            "title": "planting watermelon",
+            "content": "prepare land in good time, put a handful fertilizer in a hole and cover it with some soil ",
+            "user_id": 1 
+        },
+        {
+            "title": "Chicken Rearing",
+            "content": "It is important to vaccinate your chicks on time to prevent them from diseases.",
+            "user_id": 1
+        }
+    ]
+}

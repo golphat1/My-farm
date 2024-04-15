@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-from blog.models import Post
-
+from django.http import request
+from .models import Post  # Import the Post model assuming it contains user posts
+from django.contrib.auth import logout  # Import the logout function
+from django.http import HttpResponseNotAllowed
 
 def register(request):
     if request.method == 'POST':
@@ -43,7 +44,16 @@ def profile(request):
 
     return render(request, 'users/profile.html', context)
 
-def user_posts(request, username):
-    user = User.objects.get(username=username)
-    posts = Post.objects.filter(author=user)
-    return render(request, 'blog/user_posts.html', {'posts': posts, 'user': user})
+
+@login_required
+def user_posts(request):
+    # Retrieve posts for the current user
+    posts = Post.objects.filter(author=request.user)
+    return render(request, 'users/posts.html', {'posts': posts})
+
+@login_required
+def custom_logout(request):
+    logout(request)  # This logs the user out
+    # You can add additional functionality here
+    return redirect('login')
+
