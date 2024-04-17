@@ -21,8 +21,33 @@
             "user_id": 1 
         },
         {
-            "title": "Chicken Rearing",
-            "content": "It is important to vaccinate your chicks on time to prevent them from diseases.",
+            "title": "Benefits of fruits in your diet",
+            "content": "Incorporating a variety of fruits into your daily diet can provide numerous health benefits and contribute to your overall well-being. Aim to include a colorful assortment of fruits in your meals and snacks to maximize their nutritional benefits.",
+            "user_id": 1
+        },
+        {
+            "title": "Chia seeds",
+            "content": "To plant chia seeds, prepare a well-draining pot with nutrient-rich soil. Sprinkle chia seeds evenly over the soil's surface, then gently press them into the soil. Water lightly and place in a sunny spot. Keep the soil consistently moist, and within days, chia sprouts will emerge, ready to grow.",
+            "user_id": 1
+        },
+        {
+            "title": "How To Be Rich in Farming",
+            "content": "To thrive in farming, diversify crops, optimize resources, embrace technology, prioritize soil health, and adapt to market demands efficiently.",
+            "user_id": 1
+        },
+        {
+            "title": "Poultry",
+            "content": "Poultry refers to domesticated birds raised for meat, eggs, or feathers, including chickens, ducks, turkeys, and geese.",
+            "user_id": 1
+        },
+        {
+            "title": "How To Keep Your land Fertile",
+            "content": "Maintain soil health with crop rotation, cover crops, organic matter, and minimal tillage. Monitor nutrient levels and pH, and avoid overuse of chemical fertilizers and pesticides.",
+            "user_id": 1
+        },
+        {
+            "title": "Problems Encountered In Farming",
+            "content": "Farming faces challenges like climate change, pests, diseases, soil degradation, water scarcity, market volatility, and labor shortages. Sustainable practices, technology adoption, and policy support are vital for resilience and long-term viability.",
             "user_id": 1
         }
     ]

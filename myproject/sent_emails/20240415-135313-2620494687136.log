@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: golphatwanyonyi@gmail.com
+Date: Mon, 15 Apr 2024 10:53:13 -0000
+Message-ID: <171317839390.3508.16588511001879254042@DESKTOP-KRUR43V>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/NA/c5j2kp-505e45cfbaec3c9bd9fe00fee50098ad/
+
+Your username, in case you’ve forgotten: Golly
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
