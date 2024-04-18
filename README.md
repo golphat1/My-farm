@@ -3,7 +3,7 @@ Project Name: Mkulima Social
 Introduction:
 Welcome to the Mkulima Social! This platform allows users to create, publish, and manage their blog posts. Users can register for an account, log in, create new posts, update existing posts, delete posts, and view posts from other users(upload images, videos to be included later).
 
-Deployed Site: YourDeployedSite.com
+Deployed Site: mkulimasocialapp.heroku.com
 Final Project Blog Article: (https://medium.com/@golphatwanyonyi/introduction-04e2958037ec)
 Author(s) LinkedIn: https://www.linkedin.com/in/golphat-wekesa/
 Author Name: Golphat Wekesa
