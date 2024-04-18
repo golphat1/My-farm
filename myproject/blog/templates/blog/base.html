@@ -8,24 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <!-- Link to the Bootstrap CSS file hosted on a CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Link to the custom CSS file -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
+    <!-- Dynamic title based on the 'title' variable -->
     {% if title %}
-        <title>Mkulima Young {{ title }}</title>
+        <title>Mkulima Free {{ title }}</title>
     {% else %}
-        <title>Mkulima Young</title>
+        <title>Mkulima Free</title>
     {% endif %}
 </head>
 <body>
+    <!-- Header section -->
     <header class="site-header">
+      <!-- Navigation bar -->
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Mkulima Young</a>
+          <!-- Navbar brand -->
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Mkulima Free</a>
+          <!-- Navbar toggle button for small screens -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
+          <!-- Navbar links -->
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
@@ -46,9 +54,12 @@
         </div>
       </nav>
     </header>
+
+    <!-- Main content area -->
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+          <!-- Display messages if any -->
           {% if messages %}
             {% for message in messages %}
               <div class="alert alert-{{ message.tags }}">
@@ -56,8 +67,10 @@
               </div>
             {% endfor %}
           {% endif %}
+          <!-- Block to be overridden by child templates -->
           {% block content %}{% endblock %}
         </div>
+        <!-- Sidebar -->
         <div class="col-md-4">
           <div class="content-section">
             <h3>Our Sidebar</h3>

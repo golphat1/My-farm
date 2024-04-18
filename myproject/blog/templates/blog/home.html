@@ -1,25 +1,37 @@
 {% extends "blog/base.html" %}
 {% block content %}
+    <!-- Loop through each post in the posts queryset -->
     {% for post in posts %}
+        <!-- Article section for displaying each post -->
         <article class="media content-section">
+          <!-- Author's profile image -->
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
+            <!-- Metadata section -->
             <div class="article-metadata">
+              <!-- Author's name with a link to their posts -->
               <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <!-- Date posted formatted as 'Month day, Year' -->
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
+            <!-- Post title with a link to its detail page -->
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <!-- Post content -->
             <p class="article-content">{{ post.content }}</p>
           </div>
         </article>
     {% endfor %}
+
+    <!-- Pagination section -->
     {% if is_paginated %}
 
+      <!-- Previous page link -->
       {% if page_obj.has_previous %}
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
       {% endif %}
 
+      <!-- Numbered page links -->
       {% for num in page_obj.paginator.page_range %}
         {% if page_obj.number == num %}
           <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
@@ -28,6 +40,7 @@
         {% endif %}
       {% endfor %}
 
+      <!-- Next page link -->
       {% if page_obj.has_next %}
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>

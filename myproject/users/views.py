@@ -8,6 +8,9 @@ from django.contrib.auth import logout  # Import the logout function
 from django.http import HttpResponseNotAllowed
 
 def register(request):
+    """
+    View function for user registration.
+    """
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -19,20 +22,20 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-
 @login_required
 def profile(request):
+    """
+    View function for user profile page.
+    Allows users to update their profile information.
+    """
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
             return redirect('profile')
-
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
@@ -44,16 +47,20 @@ def profile(request):
 
     return render(request, 'users/profile.html', context)
 
-
 @login_required
 def user_posts(request):
-    # Retrieve posts for the current user
+    """
+    View function for displaying posts created by the current user.
+    """
     posts = Post.objects.filter(author=request.user)
     return render(request, 'users/posts.html', {'posts': posts})
 
 @login_required
 def custom_logout(request):
+    """
+    View function for custom logout.
+    Logs the user out and redirects to the login page.
+    """
     logout(request)  # This logs the user out
     # You can add additional functionality here
     return redirect('login')
-

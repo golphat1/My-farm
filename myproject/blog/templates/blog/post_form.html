@@ -1,14 +1,23 @@
 {% extends "blog/base.html" %}
+
 {% load crispy_forms_tags %}
+
 {% block content %}
+    <!-- Content section for the blog post form -->
     <div class="content-section">
+        <!-- Form for creating a new blog post -->
         <form method="post" class="uniForm">
+            <!-- CSRF token for security -->
             {% csrf_token %}
+            <!-- Fieldset with legend for the form -->
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Blog Post</legend>
+                <!-- Render the form using crispy forms -->
                 {{ form|crispy }}
             </fieldset>
+            <!-- Form group for the submit button -->
             <div class="form-group">
+                <!-- Submit button for posting the blog -->
                 <button class="btn btn-outline-info" type="submit">Post</button>
             </div>
         </form>

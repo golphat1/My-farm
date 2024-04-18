@@ -1,19 +1,30 @@
 {% extends "blog/base.html" %}
+
 {% block content %}
+  <!-- Article section for displaying a single post -->
   <article class="media content-section">
+    <!-- Author's profile image -->
     <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
     <div class="media-body">
+      <!-- Metadata section -->
       <div class="article-metadata">
+        <!-- Author's name with a link (replace '#' with appropriate URL) -->
         <a class="mr-2" href="#">{{ object.author }}</a>
+        <!-- Date posted formatted as 'Month day, Year' -->
         <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        <!-- Buttons for post update and delete (visible only to the author of the post) -->
         {% if object.author == user %}
           <div>
+            <!-- Button to update the post -->
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+            <!-- Button to delete the post -->
             <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
           </div>
         {% endif %}
       </div>
+      <!-- Post title -->
       <h2 class="article-title">{{ object.title }}</h2>
+      <!-- Post content -->
       <p class="article-content">{{ object.content }}</p>
     </div>
   </article>

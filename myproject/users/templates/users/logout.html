@@ -1,11 +1,15 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
+<!-- Start content block -->
 <!-- Logout form for POST request -->
 <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
+    <!-- CSRF token to prevent CSRF attacks -->
     <button type="submit" style="border: none; background: none; cursor: pointer; color: blue; text-decoration: underline;">
         Logout
     </button>
+    <!-- Logout button with custom styling -->
 </form>
+<!-- End content block -->
 {% endblock %}

@@ -1,21 +1,23 @@
-{% extends "blog/base.html" %}
-{% load crispy_forms_tags %}
-{% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
-            </div>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
-            </small>
-        </div>
-    </div>
-{% endblock content %}
+{% extends "blog/base.html" %} <!-- Extends the base template -->
+
+{% load crispy_forms_tags %} <!-- Load crispy forms template tags -->
+
+{% block content %} <!-- Start content block -->
+    <div class="content-section"> <!-- Start content-section div -->
+        <form method="POST"> <!-- Start form for user registration -->
+            {% csrf_token %} <!-- CSRF token to prevent CSRF attacks -->
+            <fieldset class="form-group"> <!-- Start fieldset for form grouping -->
+                <legend class="border-bottom mb-4">Join Today</legend> <!-- Legend for the form -->
+                {{ form|crispy }} <!-- Render the registration form using crispy forms -->
+            </fieldset> <!-- End fieldset -->
+            <div class="form-group"> <!-- Start form-group div -->
+                <button class="btn btn-outline-info" type="submit">Sign Up</button> <!-- Button to submit the form -->
+            </div> <!-- End form-group div -->
+        </form> <!-- End form -->
+        <div class="border-top pt-3"> <!-- Start border-top div -->
+            <small class="text-muted"> <!-- Start small text-muted -->
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a> <!-- Link to login page -->
+            </small> <!-- End small text-muted -->
+        </div> <!-- End border-top div -->
+    </div> <!-- End content-section div -->
+{% endblock content %} <!-- End content block -->
