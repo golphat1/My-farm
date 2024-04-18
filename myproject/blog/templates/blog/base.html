@@ -16,19 +16,20 @@
 
     <!-- Dynamic title based on the 'title' variable -->
     {% if title %}
-        <title>Mkulima Free {{ title }}</title>
+        <title>Mkulima Social {{ title }}</title>
     {% else %}
-        <title>Mkulima Free</title>
+        <title>Mkulima Social</title>
     {% endif %}
 </head>
-<body>
+<body style="background-image: url('media/default1.jpg');">
+  
     <!-- Header section -->
     <header class="site-header">
       <!-- Navigation bar -->
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           <!-- Navbar brand -->
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Mkulima Free</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Mkulima Social</a>
           <!-- Navbar toggle button for small screens -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

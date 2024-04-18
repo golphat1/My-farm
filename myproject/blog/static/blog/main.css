@@ -1,11 +1,12 @@
 body {
   background: #fafafa;
-  color: #333333;
+  background-image: url('media_default.jpg');
+  color: hsl(141, 91%, 30%);
   margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #059c37;
 }
 
 ul {
@@ -13,7 +14,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #068644;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -37,11 +38,11 @@ ul {
 }
 
 .article-title {
-  color: #444444;
+  color: #04721f;
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #079b27;
   text-decoration: none;
 }
 
@@ -62,7 +63,7 @@ a.article-title:hover {
 }
 
 .article-metadata a:hover {
-  color: #333;
+  color: #099124;
   text-decoration: none;
 }
 

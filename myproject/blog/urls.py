@@ -8,6 +8,8 @@ from .views import (
     UserPostListView
 )
 from . import views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     # URL pattern for the home page, using PostListView to display a list of posts
@@ -27,7 +29,7 @@ urlpatterns = [
 
     # URL pattern to delete an existing post, using PostDeleteView
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
-
+   
     # URL pattern for the about page, using views.about function
     path('about/', views.about, name='blog-about'),
 ]
