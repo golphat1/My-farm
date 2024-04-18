@@ -35,3 +35,4 @@ Submit a pull request detailing your changes.
 
 Licensing:
 This project is licensed under the MIT License. See the LICENSE file for more details.
+![image](https://github.com/golphat1/My-farm/assets/118168814/7d940f0e-9e79-4f8f-9cb5-11c6c527b785)
