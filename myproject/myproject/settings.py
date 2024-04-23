@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=h@@6r=myuks#cd&xpdt3=su9csn7w!!(*ac55r=vlz(et6t=)'
+#SECRET_KEY = 'django-insecure-=h@@6r=myuks#cd&xpdt3=su9csn7w!!(*ac55r=vlz(et6t=)'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lowe() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -84,7 +86,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+database_url = os.environ.get("DATABASE_URL")
+DATABASES = {
+    'default': dj_database_url.parse('')
+}
 
+# DATABASE = postgres://mkulima_social_user:vFgzbCGDkEH4xHmSyuO37BtQn3YzdLaX@dpg-cojan6en7f5s73c63da0-a.oregon-postgres.render.com/mkulima_social
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -119,8 +126,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'static/'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+#STATIC_URL = 'static/'
+
+# changes heroku
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+# changes
+
+# Don't store the original (un-hashed filename) version of static files, to reduce slug size:
+# https://whitenoise.readthedocs.io/en/latest/django.html#WHITENOISE_KEEP_ONLY_HASHED_FILES
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL ='/media/'
@@ -140,4 +162,9 @@ Login_URL = 'login'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'golphatwanyony@gmail.com'
+EMAIL_HOST_PASSWORD = 'Rosekadiga'
